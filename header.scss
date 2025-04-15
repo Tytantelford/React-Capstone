@@ -1,0 +1,39 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+
+  .company-name {
+    a {
+      font-weight: bold;
+      color: #e9b578;
+      text-decoration: none;
+      font-size: 30px;
+
+      &:hover {
+        color: #f1f1f1;
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+
+      &:hover {
+        color: #e9b578;
+        font-weight: bolder;
+      }
+    }
+  }
+}

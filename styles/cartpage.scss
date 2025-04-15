@@ -1,0 +1,18 @@
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  button {
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+
+  .order-confirmed {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
