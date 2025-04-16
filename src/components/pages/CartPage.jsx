@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../styles/cartpage.scss";
 
 function CartPage({ myShoppingCart, setMyShoppingCart }) {
   const [allOfTheProducts, setAllOfTheProducts] = useState([]);

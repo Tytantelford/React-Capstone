@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../productspage.scss";
 
 function ProductsPage({ myShoppingCart, setMyShoppingCart }) {
   const [products, setProducts] = useState([]);

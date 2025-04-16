@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/contactpage.scss";
 
 function ContactPage() {
   const [firstName, setFirstName] = useState("");

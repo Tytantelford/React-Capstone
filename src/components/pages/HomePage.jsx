@@ -2,8 +2,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMountainSun } from "@fortawesome/free-solid-svg-icons";
 
-import "../styles/homepage.scss";
-
 function HomePage() {
   return (
     <div className="homepage-container">

@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./Header";
-import HomePage from "./HomePage";
-import ProductsPage from "./ProductsPage";
-import Footer from "./Footer";
-import CartPage from "./CartPage";
-import ContactPage from "./ContactPage";
-import AboutPage from "./AboutPage";
+// import Header from "./Header";
+import Header from "./components/navigation/Header";
+import Footer from "./components/navigation/Footer";
+import HomePage from "./components/pages/HomePage";
+import ContactPage from "./components/pages/ContactPage";
+import AboutPage from "./components/pages/AboutPage";
+import CartPage from "./components/pages/CartPage";
+import ProductsPage from "./components/pages/ProductsPage";
+
+import "./components/styles/main.scss";
 
 function App() {
   const [myShoppingCart, setMyShoppingCart] = useState({});
