@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 function ContactPage() {
   const [firstName, setFirstName] = useState("");
@@ -9,10 +10,17 @@ function ContactPage() {
   const submit = (event) => {
     event.preventDefault();
 
+    if (!firstName || !lastName || !email || !message) {
+      toast.error("Please fill out all the information!");
+      return;
+    }
+
     setFirstName("");
     setLastName("");
     setEmail("");
     setMessage("");
+
+    toast.success("We'll get back to you shortly!");
   };
 
   return (

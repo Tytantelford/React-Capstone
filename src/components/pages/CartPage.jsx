@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import React, { useEffect, useState } from "react";
 
 function CartPage({ myShoppingCart, setMyShoppingCart }) {
@@ -26,6 +27,8 @@ function CartPage({ myShoppingCart, setMyShoppingCart }) {
             <h3>{matchingProduct.title}</h3>
             <p>Price: ${matchingProduct.price}</p>
             <p>Quantity: {productQuantity}</p>
+            <button onClick={() => minusItemQuantity(productId)}>-</button>
+            <button onClick={() => addItemQuantity(productId)}>+</button>
             <hr />
           </div>
         );
@@ -40,7 +43,6 @@ function CartPage({ myShoppingCart, setMyShoppingCart }) {
 
     for (let productId in myShoppingCart) {
       const productQuantity = myShoppingCart[productId];
-
       const product = allOfTheProducts.find((productItem) => {
         return productItem.id === parseInt(productId);
       });
@@ -56,9 +58,35 @@ function CartPage({ myShoppingCart, setMyShoppingCart }) {
   const shippingCost = 4.99;
   const totalPrice = subtotal() + shippingCost;
 
+  const addItemQuantity = (productId) => {
+    setMyShoppingCart((previousCart) => {
+      const updatedCart = { ...previousCart };
+      updatedCart[productId] += 1;
+      return updatedCart;
+    });
+  };
+
+  const minusItemQuantity = (productId) => {
+    setMyShoppingCart((previousCart) => {
+      const updatedCart = { ...previousCart };
+      if (updatedCart[productId] > 1) {
+        updatedCart[productId] -= 1;
+      } else {
+        delete updatedCart[productId];
+      }
+      return updatedCart;
+    });
+  };
+
   const submitOrderButton = () => {
+    if (Object.keys(myShoppingCart).length === 0) {
+      toast.error("Your cart is empty!");
+      return;
+    }
+
     setMyShoppingCart({});
     setOrderConfirmed(true);
+    toast.success("Packaging starts now!");
   };
 
   return (
