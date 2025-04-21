@@ -1,3 +1,13 @@
+h1 {
+  text-align: center;
+  text-align: center;
+  font-size: 48px;
+  color: #e9b578;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+}
+
 .product-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

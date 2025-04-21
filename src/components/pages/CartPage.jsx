@@ -90,22 +90,27 @@ function CartPage({ myShoppingCart, setMyShoppingCart }) {
   };
 
   return (
-    <div className="cart-page">
+    <div className="container">
       <h1>Shopping Cart</h1>
-
-      {orderConfirmed ? (
-        <p className="order-confirmed">✅ Order confirmed!</p>
-      ) : (
-        <>
-          {listOfCartItems.length > 0 && listOfCartItems}
-          {listOfCartItems.length === 0 && (
-            <p>You have nothing in your cart right now.</p>
-          )}
-          <p>Shipping $4.99</p>
-          <p>Total: ${totalPrice.toFixed(2)}</p>
-          <button onClick={submitOrderButton}>Submit order</button>
-        </>
-      )}
+      <div className="cart-page">
+        {orderConfirmed ? (
+          <p className="order-confirmed">✅ Order confirmed!</p>
+        ) : (
+          <>
+            {listOfCartItems.length > 0 && listOfCartItems}
+            {listOfCartItems.length === 0 && (
+              <p className="youhave">
+                You have nothing in your cart right now.
+              </p>
+            )}
+            <h2>Shipping</h2>
+            <p>$4.99</p>
+            <h2>Total</h2>
+            <p>${totalPrice.toFixed(2)}</p>
+            <button onClick={submitOrderButton}>Submit order</button>
+          </>
+        )}
+      </div>
     </div>
   );
 }

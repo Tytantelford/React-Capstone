@@ -3,20 +3,33 @@
 
   h1 {
     text-align: center;
+    text-align: center;
+    font-size: 48px;
+    color: #e9b578;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-family: sans-serif;
   }
 
   .contact-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 
     button {
       height: 50px;
       font-size: 20px;
-      background-color: black;
+      background-color: #e9b578;
       color: white;
       border: none;
       cursor: pointer;
+      border-radius: 5px;
     }
   }
 }

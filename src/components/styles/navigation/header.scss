@@ -36,4 +36,42 @@ header {
       }
     }
   }
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    color: #e9b578;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 425px) {
+  .header {
+    position: relative;
+
+    .nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #333;
+      flex-direction: column;
+      width: 100px;
+      text-align: center;
+      padding: 0;
+
+      a {
+        padding: 1px 1px;
+        font-size: 14px;
+        border-bottom: 1px solid #444;
+      }
+    }
+
+    .nav.open {
+      display: flex;
+    }
+
+    .hamburger {
+      display: block;
+    }
+  }
 }
