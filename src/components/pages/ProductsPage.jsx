@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 function ProductsPage({ myShoppingCart, setMyShoppingCart }) {
   const [products, setProducts] = useState([]);
   const [quantity, setQuantity] = useState({});
+  const [sortOrder, setSortOrder] = useState("asc");
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -40,9 +42,28 @@ function ProductsPage({ myShoppingCart, setMyShoppingCart }) {
     }));
   };
 
+  const sortButton = () => {
+    const newSortOrder = sortOrder === "asc" ? "desc" : "asc";
+    setSortOrder(newSortOrder);
+
+    const sortedProducts = [...products].sort((a, b) => {
+      if (newSortOrder === "asc") {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+
+    setProducts(sortedProducts);
+  };
+
   return (
     <div>
       <h1>Products</h1>
+
+      <button className="sort-button" onClick={sortButton}>
+        Sort by Price: {sortOrder === "asc" ? "Low to High" : "High to Low"}
+      </button>
 
       <div className="product-cards">
         {products.length === 0 ? (
